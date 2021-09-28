@@ -1,0 +1,22 @@
+server:
+  port: ${SERVICE_PORT:8090}
+  servlet:
+    session:
+      timeout: 1440m
+spring:
+  application:
+    name: ADMIN_SERVICE
+  jap:
+    show-sql: true
+    open-in-view: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MariaDB103Dialect
+  datasource:
+    driver: org.mariadb.jdbc.Driver
+    url: ${DATASOURCE_URL:jdbc:mariadb://localhost:3306/test}
+    username: ${DATASOURCE_USERNAME:root}
+    password: ${DATASOURCE_PASSWORD:123456}
